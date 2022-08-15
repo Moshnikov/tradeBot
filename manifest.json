@@ -1,0 +1,30 @@
+{
+  "name": "bank_Name",
+  "description": "bank_terminal_name",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "permissions": ["storage", "activeTab", "scripting", "tabs", "notifications"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "icons": {
+    "16": "images/icon_16.png",
+    "32": "images/icon_32.png",
+    "128": "images/icon_128.png"
+  },
+  "host_permissions": [
+    "host_bank_terminal"
+  ],
+  "content_script": [
+    {
+      "matches": [
+        "host_bank_terminal"
+      ],
+      "js": [
+        "js/terminal.js"
+      ],
+      "css": ["css/styles.css"]
+    }
+  ]
+}
